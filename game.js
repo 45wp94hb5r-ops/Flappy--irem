@@ -9,7 +9,7 @@ const gameOver = document.getElementById("gameOver");
 const scoreText = document.getElementById("scoreText");
 
 const bird = new Image();
-bird.src = "irem.png";
+bird.src = "irem.PNG";
 
 let gravity = 0.45;
 let velocity = 0;
