@@ -315,3 +315,5 @@ bird.onload = function () {
 
 };
 }
+window.startGame = startGame;
+window.restartGame = restartGame;
