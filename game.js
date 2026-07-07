@@ -11,11 +11,11 @@ const scoreText = document.getElementById("scoreText");
 const bird = new Image();
 bird.src = "irem.PNG";
 
-let gravity = 0.45;
-let velocity = 0;
+let gravity = 0.35;
+let velocity = -7;
 let birdX = 90;
 let birdY = 300;
-let birdSize = 80;
+let birdSize = 130;
 
 let pipes = [];
 let score = 0;
@@ -98,11 +98,11 @@ function updatePipes() {
         }
 
         if (
-            birdX + birdSize > pipe.x &&
-            birdX < pipe.x + 70 &&
+            birdX + birdSize - 20 > pipe.x &&
+            birdX + 20 < pipe.x + 70 &&
             (
-                birdY < pipe.top ||
-                birdY + birdSize > pipe.bottom
+                birdY + 20 < pipe.top ||
+                birdY + birdSize - 20 > pipe.bottom
             )
         ) {
 
