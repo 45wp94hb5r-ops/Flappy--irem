@@ -63,7 +63,7 @@ document.addEventListener("touchstart",jump);
 
 function createPipe(){
 
-    let gap=260;
+    let gap=250;
     let top=Math.random()*250+50;
 
     pipes.push({
