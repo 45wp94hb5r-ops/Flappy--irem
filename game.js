@@ -125,11 +125,11 @@ function drawPipes(){
 
 
         if(
-            birdX + birdSize > p.x &&
-            birdX < p.x + 70 &&
+            birdX + 60 > birdSize > p.x &&
+            birdX + 20 < p.x + 70 &&
             (
-                birdY < p.top ||
-                birdY + birdSize > p.bottom
+                birdY < 20 p.top ||
+                birdY + 60 > birdSize > p.bottom
             )
         ){
 
