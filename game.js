@@ -124,3 +124,56 @@ function updatePipes() {
     }
 
 }
+function endGame() {
+    playing = false;
+
+    if (score > bestScore) {
+        bestScore = score;
+        localStorage.setItem("bestScore", bestScore);
+    }
+
+    scoreText.textContent = score + " | En Yüksek: " + bestScore;
+    gameOver.style.display = "block";
+}
+
+function drawScore() {
+    ctx.fillStyle = "#ffffff";
+    ctx.strokeStyle = "#ff4da6";
+    ctx.lineWidth = 4;
+    ctx.font = "bold 42px Arial";
+    ctx.textAlign = "center";
+
+    ctx.strokeText(score, canvas.width / 2, 60);
+    ctx.fillText(score, canvas.width / 2, 60);
+}
+
+function loop() {
+
+    if (!playing) return;
+
+    velocity += gravity;
+    birdY += velocity;
+
+    if (birdY < 0) {
+        birdY = 0;
+    }
+
+    if (birdY + birdSize >= canvas.height) {
+        endGame();
+        return;
+    }
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    drawPipes();
+    updatePipes();
+
+    drawBird();
+    drawScore();
+
+    requestAnimationFrame(loop);
+}
+
+bird.onload = function () {
+    menu.style.display = "flex";
+};
