@@ -41,7 +41,7 @@ let best = Number(localStorage.getItem("best")) || 0;
 
 const gravity = 0.45;
 const jumpPower = -8;
-const pipeWidth = 110;
+const pipeWidth = 90;
 
 const bird = {
     x: 90,
@@ -285,11 +285,11 @@ function update() {
         p.x -= 3.5;
 
         // Çarpışma
-const hitbox = 14;
+const hitbox = 20;
 
 if (
     bird.x + bird.w - hitbox > p.x &&
-    bird.x + hitbox < p.x + pipeWidth - 8 &&
+    bird.x + hitbox < p.x + pipeWidth - 35
     (
         bird.y + hitbox < p.top ||
         bird.y + bird.h - hitbox > p.bottom
