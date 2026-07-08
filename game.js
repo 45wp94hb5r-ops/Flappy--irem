@@ -406,66 +406,146 @@ bg.onload = () => {
 };
 // Canvas'a odaklan
 canvas.setAttribute("tabindex", "1");
+// ❤️ İrem butonu
+
+const loveButton = document.getElementById("loveButton");
+
+const loveLevels = [10, 40, 70, 100];
+
+let loveIndex = 0;
+
 loveButton.onclick = function () {
 
-    loveLevel += 10;
-
-    if (loveLevel > 100) {
-        loveLevel = 100;
-    }
+    const value = loveLevels[loveIndex];
 
     const mesaj = document.createElement("div");
 
-    if (loveLevel < 100) {
+    if (value < 100) {
+
         mesaj.innerHTML = `
-        ❤️<br>
-        <b>İrem'i Sevme Oranı</b><br><br>
-        <span style="font-size:55px;">${loveLevel}%</span>
+
+        ❤️<br><br>
+
+        <b>İrem Dozu</b><br><br>
+
+        <span style="font-size:55px;">%${value}</span>
+
         `;
+
     } else {
+
         mesaj.innerHTML = `
-        ❤️❤️❤️<br>
-        <span style="font-size:34px;">%100</span><br><br>
+
+        ❤️❤️❤️<br><br>
+
+        <span style="font-size:55px;">%100</span><br><br>
+
         <b>⚠️ Fazla dozda İrem aldın! 💖</b>
+
         `;
+
     }
 
     mesaj.style.position = "fixed";
+
     mesaj.style.top = "50%";
+
     mesaj.style.left = "50%";
+
     mesaj.style.transform = "translate(-50%,-50%)";
+
     mesaj.style.background = "#ff69b4";
+
     mesaj.style.color = "white";
+
     mesaj.style.padding = "30px";
+
     mesaj.style.borderRadius = "25px";
+
     mesaj.style.textAlign = "center";
-    mesaj.style.fontSize = "26px";
+
+    mesaj.style.fontSize = "28px";
+
     mesaj.style.fontWeight = "bold";
+
     mesaj.style.boxShadow = "0 0 30px hotpink";
+
     mesaj.style.zIndex = "99999";
 
     document.body.appendChild(mesaj);
 
+    // 💖 Kalp efekti
+
+    for (let i = 0; i < 40; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.innerHTML = "💖";
+
+        heart.style.position = "fixed";
+
+        heart.style.left = Math.random() * window.innerWidth + "px";
+
+        heart.style.top = window.innerHeight + "px";
+
+        heart.style.fontSize = (20 + Math.random() * 30) + "px";
+
+        heart.style.pointerEvents = "none";
+
+        heart.style.transition = "all 3s ease-out";
+
+        heart.style.zIndex = "99998";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+
+            heart.style.top = (-100 - Math.random() * 200) + "px";
+
+            heart.style.left =
+
+                (parseFloat(heart.style.left) + (Math.random() * 300 - 150)) + "px";
+
+            heart.style.opacity = "0";
+
+            heart.style.transform = `rotate(${Math.random() * 720}deg) scale(1.5)`;
+
+        }, 20);
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        }, 3000);
+
+    }
+
     setTimeout(() => {
+
         mesaj.remove();
+
     }, 1800);
+
+    loveIndex++;
+
+    if (loveIndex >= loveLevels.length) {
+
+        loveIndex = 0;
+
+    }
+
 };
+
 // Telefonlarda kaydırmayı engelle
+
 document.body.addEventListener(
+
     "touchmove",
+
     function (e) {
+
         if (playing) e.preventDefault();
+
     },
+
     { passive: false }
-);
-const loveButton = document.getElementById("loveButton");
-
-console.log(loveButton);
-
-3000);
-}
-
-setTimeout(() => {
-    mesaj.remove();
-}, 2500);
-};
