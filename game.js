@@ -285,11 +285,11 @@ function update() {
         p.x -= 3.5;
 
         // Çarpışma
-const hitbox = 20;
+const hitbox = 24;
 
 if (
-    bird.x + bird.w - hitbox > p.x &&
-    bird.x + hitbox < p.x + pipeWidth - 35
+    bird.x + bird.w - hitbox > p.x 10 &&
+    bird.x + hitbox < p.x + pipeWidth - 10 &&
     (
         bird.y + hitbox < p.top ||
         bird.y + bird.h - hitbox > p.bottom
