@@ -203,7 +203,7 @@ function drawPipes() {
             p.x,
             p.bottom,
             pipeWidth,
-            canvas.height - p.bottom + 50
+            canvas.height - p.bottom
         );
 
         // Üst boru
@@ -219,9 +219,9 @@ function drawPipes() {
         ctx.drawImage(
             pipeImg,
             -pipeWidth / 2,
-            -50,
+            -0,
             pipeWidth,
-            p.top + 50
+            p.top
         );
 
         ctx.restore();
@@ -300,7 +300,7 @@ if (
 
 
         // Skor
-      if (!p.passed && p.x + pipeWidth < bird.x + 15)  {
+       if (!p.passed && p.x + pipeWidth - 10 < bird.x) {
 
             p.passed = true;
             score++;
