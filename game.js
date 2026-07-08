@@ -494,17 +494,6 @@ loveButton.onclick = function () {
         mesaj.remove();
     }, 1800);
 
-    loveIndex++;
-
-    if (loveIndex >= loveLevels.length) {
-        loveIndex = 0;
-    }
-};
-    const heart = document.createElement("div");
-
-    const emojis = ["💖","💗","💕","❤️","💘","✨","🌸"];
-    heart.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
-
     heart.style.position = "fixed";
     heart.style.left = Math.random() * window.innerWidth + "px";
     heart.style.top = Math.random() * window.innerHeight + "px";
