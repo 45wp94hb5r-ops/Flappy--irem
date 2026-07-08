@@ -402,7 +402,7 @@ function loop(){
 // Resimler yüklenince ilk ekranı çiz
 bg.onload = () => {
     ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
-
+};
 // Canvas'a odaklan
 canvas.setAttribute("tabindex", "1");
 
