@@ -1,7 +1,7 @@
 //========================
 // FLAPPY İREM - PART 1
 //========================
-
+const iremBadge = document.getElementById("iremBadge");
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
@@ -420,11 +420,18 @@ loveButton.onclick = function () {
 if (value === "bagimli") {
 
     mesaj.innerHTML = `
-    👑<br><br>
-    <b>🚨 BAŞARIM AÇILDI!</b><br><br>
-    💖 Resmen İrem bağımlısı oldun!<br><br>
-    ❤️ Sonsuz Sevgi Modu Aktif ❤️
-    `;
+👑<br><br>
+
+🎉 BAŞARIM AÇILDI!<br><br>
+
+❤️ İREM BAĞIMLISISIN ❤️<br><br>
+
+💖 Tebrikler!<br><br>
+
+∞ Sonsuz Sevgi Modu Aktif!
+`;
+
+iremBadge.style.display = "block";
 
     // Buraya büyük kalp patlaması kodun gelecek.
 
