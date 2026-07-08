@@ -285,19 +285,22 @@ function update() {
         p.x -= 3.5;
 
         // Çarpışma
-        if (
-            bird.x + bird.w - 25 > p.x &&
-            bird.x + 25 < p.x + pipeWidth &&
-            (
-                bird.y + 25 < p.top ||
-                bird.y + bird.h - 25 > p.bottom
-            )
-        ) {
-            endGame();
+const hitbox = 14;
+
+if (
+    bird.x + bird.w - hitbox > p.x &&
+    bird.x + hitbox < p.x + pipeWidth - 8 &&
+    (
+        bird.y + hitbox < p.top ||
+        bird.y + bird.h - hitbox > p.bottom
+    )
+) {
+    endGame();
+}
         }
 
         // Skor
-        if (!p.passed && p.x + 110 < bird.x) {
+      if (!p.passed && p.x + pipeWidth < bird.x + 15)  {
 
             p.passed = true;
             score++;
