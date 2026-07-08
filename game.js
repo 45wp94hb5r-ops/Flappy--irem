@@ -426,26 +426,48 @@ mesaj.innerHTML = `
 <div style="font-size:34px;font-weight:bold;">İREM</div>
 <div style="font-size:40px;">💖</div>
 `;
-mesaj.style.width = "300px";
-mesaj.style.textAlign = "center";
-mesaj.style.lineHeight = "1.4";
-mesaj.style.fontSize = "30px";
-mesaj.style.padding = "25px";
-mesaj.style.borderRadius = "25px";
 mesaj.style.position = "fixed";
 mesaj.style.top = "50%";
 mesaj.style.left = "50%";
 mesaj.style.transform = "translate(-50%, -50%)";
-mesaj.style.background = "#ff69b4";
+
+mesaj.style.width = "300px";
+mesaj.style.textAlign = "center";
+mesaj.style.lineHeight = "1.4";
+
+mesaj.style.background = "rgba(255,105,180,0.9)";
 mesaj.style.color = "white";
-mesaj.style.padding = "20px 35px";
-mesaj.style.borderRadius = "20px";
-mesaj.style.fontSize = "24px";
+mesaj.style.padding = "25px";
+mesaj.style.borderRadius = "25px";
+mesaj.style.fontSize = "30px";
 mesaj.style.fontWeight = "bold";
+mesaj.style.boxShadow = "0 0 40px hotpink";
+mesaj.style.border = "3px solid white";
+mesaj.style.backdropFilter = "blur(10px)";
 mesaj.style.zIndex = "99999";
-mesaj.style.boxShadow = "0 0 25px hotpink";
 
 document.body.appendChild(mesaj);
+    for (let i = 0; i < 25; i++) {
+    const kalp = document.createElement("div");
+    kalp.innerHTML = "💖";
+
+    kalp.style.position = "fixed";
+    kalp.style.left = Math.random() * 100 + "vw";
+    kalp.style.top = "100vh";
+    kalp.style.fontSize = (20 + Math.random() * 20) + "px";
+    kalp.style.transition = "all 3s linear";
+    kalp.style.pointerEvents = "none";
+    kalp.style.zIndex = "99998";
+
+    document.body.appendChild(kalp);
+
+    setTimeout(() => {
+        kalp.style.top = "-10vh";
+        kalp.style.opacity = "0";
+    }, 50);
+
+    setTimeout(() => kalp.remove(), 3000);
+}
 
 setTimeout(() => {
     mesaj.remove();
