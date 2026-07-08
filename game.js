@@ -285,11 +285,11 @@ function update() {
 
         // Çarpışma
         if (
-            bird.x + bird.w - 15 > p.x &&
-            bird.x + 15 < p.x + 80 &&
+            bird.x + bird.w - 25 > p.x &&
+            bird.x + 25 < p.x + 80 &&
             (
-                bird.y + 15 < p.top ||
-                bird.y + bird.h - 15 > p.bottom
+                bird.y + 25 < p.top ||
+                bird.y + bird.h - 25 > p.bottom
             )
         ) {
             endGame();
