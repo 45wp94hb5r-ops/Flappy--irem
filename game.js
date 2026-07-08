@@ -4,14 +4,25 @@
 const iremBadge = document.getElementById("iremBadge");
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
-
+const missions = [
+    { score: 10, title: "🐣 İrem'i Yeni Tanıdı" },
+    { score: 25, title: "💗 İrem Hayranı" },
+    { score: 50, title: "😂 İrem'in Eziği" },
+    { score: 100, title: "😎 İrem'in Arkadaşı" },
+    { score: 200, title: "🤝 İrem'in Dostu" },
+    { score: 350, title: "💖 İrem'in Can Dostu" },
+    { score: 500, title: "👑 İrem'in Sağ Kolu" },
+    { score: 1000, title: "❤️ İrem Efsanesi" }
+];
 canvas.width = 400;
 canvas.height = 700;
 
 const menu = document.getElementById("menu");
 const gameOver = document.getElementById("gameOver");
 const scoreText = document.getElementById("scoreText");
-
+const scoreButton = document.getElementById("scoreButton");
+const missions = document.getElementById("missions");
+const missionList = document.getElementById("missionList");
 // Resimler
 const bg = new Image();
 bg.src = "images/bg.PNG";
@@ -548,3 +559,33 @@ document.body.addEventListener(
     },
     { passive: false }
 );
+function openMissions(){
+
+    let html = "";
+
+    missions.forEach(m => {
+
+        if(best >= m.score){
+
+            html += `<p>✅ ${m.title}</p>`;
+
+        }else{
+
+            html += `<p>🔒 ${m.title} (${m.score})</p>`;
+
+        }
+
+    });
+
+    document.getElementById("missionList").innerHTML = html;
+
+    document.getElementById("missions").style.display = "block";
+
+}
+
+function closeMissions(){
+
+    document.getElementById("missions").style.display = "none";
+
+}
+scoreButton.onclick = openMissions;
