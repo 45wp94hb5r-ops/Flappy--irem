@@ -459,7 +459,7 @@ if (value === "bagimli") {
     `;
 
     // 💖 Büyük aşk patlaması (şu anki kalp efekti kodun burada kalacak)
-}
+
  
         // 💖 Büyük aşk patlaması
         for (let i = 0; i < 180; i++) {
